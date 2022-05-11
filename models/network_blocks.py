@@ -133,7 +133,7 @@ class SPPBottleneck(nn.Module):
     def forward(self, x):
         x = self.conv1(x)
         x = torch.cat([x] + [m(x) for m in self.m], dim=1)
-        x = self.conv1(x)
+        x = self.conv2(x)
         return x
 
 
